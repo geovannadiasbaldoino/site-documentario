@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>enIAC</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!--precisa colocar o ícone da página-->
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body id="body">
+    <!-- Cabeçalho, área do menu hambúrguer, título principal da página e botão que altera o tema (claro/escuro)-->
+    <header id="menu">
+        <div id="nav" class="nav">
+            <button id="hamburguer">
+                <img src="images/menu.png" alt="menu">
+            </button>
+            <h1 id="titHeader">Programador Web</h1>
+        </div>
+
+        <div id="nav2" class="nav2">
+            <button id="tema">
+                <img id="img-tema" src=" https://images.icon-icons.com/4402/PNG/96/269419_crescent-moon-icon.png"
+                    alt="tema">
+            </button>
+        </div>
+    </header>
+
+    <!-- área oculta, só aparece ao clicar no menu sanduíche, com nossos perfis-->
+    <header id="menu2">
+        <div id="menuOculto" class="menuOculto">
+            <!--tem um cartão pra cada uma-->
+            <!--card da geovanna-->
+            <div class="card-equipe">
+                <div class="card-img">
+                    <div class="imagem-perfil">
+                        <img
+                            src="images/avatar-geo.png"alt="Avatar da Geovanna">
+                    </div>
+                    <h2>Geovanna Dias</h2>
+                </div>
+                <p>
+                    Formada em Marketing, estudante de TADS e empreendedora na Baldoino Doces. Aspirante a atleta
+                    (brincadeira, eu só pedalo, corro às vezes, faço musculação e tô querendo ser jiujiteira também rs).
+                    Amo visitar igrejas católicas e conhecer novos restaurantes.
+                </p>
+            </div>
+            <!--card da isadora-->
+            <div class=" card-equipe">
+                <div class="card-img">
+                    <div class="imagem-perfil">
+                        <img src="images/avatar-isa.png" alt="Avatar da Isadora">
+                    </div>
+                    <h2>Isadora Gomes</h2>
+                </div>
+                <p>
+                    Estudante de Ciência da Computação com interesse em música e tecnologia. Gosto de viajar, cantar e
+                    conhecer novas culturas. Sou curiosa e busco aprender coisas novas.
+                </p>
+            </div>
+
+            <!-- Card da Julia -->
+            <div class="card-equipe">
+                <div class="card-img">
+                    <div class="imagem-perfil">
+                        <img src="images/avatar-julia.png"
+                            alt="Avatar da Julia">
+                    </div>
+                    <h2>Julia Vilarinho</h2>
+                </div>
+                <p>
+                    Formada em design de moda, atualmente presente na área do design gráfico.
+                    Apaixonada por arte em geral, também grafiteira.
+                    Hoje com 33 anos de idade e com muito orgulho de ser de Belo Horizonte - MG.
+                </p>
+            </div>
+
+            <!--card da Mikaela-->
+            <div class="card-equipe">
+                <div class="card-img">
+                    <div class="imagem-perfil">
+                        <img src="images/avatar-mika.png"
+                            alt="Avatar da Mikaela">
+                    </div>
+                    <h2>Mikaela Santiago</h2>
+                </div>
+                <p>
+                    Mikaela é uma pessoa comunicativa, criativa e curiosa, com facilidade para aprender. Tem interesse
+                    em tecnologia, gestão e relações humanas, buscando constantemente novos conhecimentos e
+                    oportunidades para desenvolver suas habilidades profissionais.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!--Área do corpo do site-->
+    <main>
+        <!--Essa é a área que tem a primeira galeria de imagens carrossel-->
+        <section class="inicio">
+            <h1 id="titulo2">História do Computador</h1>
+            <div id="galeria-container" class="galeria-container">
+                <button id="btn-voltar" class="btn-voltar">&lt;</button>
+                <div class="galeria" id="galeriaSlides">
+                    <img class="slide"
+                        src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9imIizMEKzkosq2pgbI1vRkjLxeJPMzS8nihtU-p4DQ&s=10%22">
+                    <img class=" slide"
+                        src="https://hypescience.com/wp-content/uploads/2012/11/harwell-witch-pb-s.jpg">
+                    <img class=" slide"
+                        src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgC58z-8l45pawRVuRqVsg-uarLfsa3Vcsxg2_9uiuZQ&s=10%22"alt="">
+                    <img class=" slide"
+                        src="images/IBM.jpg" alt="">
+                     <img class=" slide"
+                        src="images/computador-antigo.jpg" alt="">
+                    <img class=" slide"
+                        src="images/windows-95.jpg" alt="">
+                    <img class=" slide"
+                        src="images/windows.jpg" alt="">
+                    <img class=" slide"
+                        src="images/note.jpg" alt="">
+                    <img class=" slide"
+                        src="images/PC.jpg" alt="">
+                </div>
+                <button id="btn-avancar" class="btn-avancar">&gt;</button>
+                </div>
+        </section>
+
+        <!--aqui fica a área do documentário, igual a página de um filme em um strwaming, que tem a capa do filme, o título, as avaliações, resumo, indicação de idade (L, +12, +18 etc)-->
+        <section class="documentario">
+            <!-- Imagem de fundo -->
+            <div id="docBlur" class="bannerBlur"></div>
+            <!-- Gradiente/Sombra preta -->
+            <div id="bannerSombra" class="bannerSombra"></div>
+
+            <!-- Conteúdo do cartão -->
+            <div class="bannerContainer">
+                <div class="bannerContent">
+                    <h1 id="titDoc">enIAc</h1>
+                    <div id="docMeta" class="docMeta">São Paulo • Outubro • 2026  <br> Por Geovanna, Isadora, Julia, Mikaela</div>
+                    <div id="descDoc">
+                        <p>Da fumaça das válvulas gigantes à luz fria de um smartphone no seu bolso. Como uma ideia nascida no século 19 para resolver contas se tornou a força mais poderosa do planeta?</p>
+
+                        <div id="maisConteudo" class="oculto">
+                            <p>Nesta série documental reveladora, descubra a história não contada por trás das máquinas que mudaram tudo: a visão esquecida de Ada Lovelace, a sala secreta de 30 toneladas do ENIAC, a guerra silenciosa dos transistores e a revolução que tirou o computador das mãos de governos e o colocou nas mãos de todos nós. Do ENIAC ao seu notebook Acer, do MSN à era Gemini.</p>
+
+                            <p>Mais do que a evolução das máquinas, é a evolução de quem somos.</p>
+                            <p>Com Charles Babbage, Ada Lovelace, John Mauchly, John Presper Eckert</p>
+                        </div>
+
+                        <a href="#" id="btnMais" class="btnMais">Leia mais</a>
+                    </div>
+
+                    <div class="docTags">
+                        <div class="idade">Livre</div>
+                        <div id="infoDoc">• informações • público recomendado • etc</div>
+                    </div>
+
+                    <div class="docAcoes">
+                        <button id="idPlay" class="btnPlay">
+                            <!--Colocar o link do vídeo com a tag <a>, precisa hospedar o vídeo no youtube-->
+                            <a id="linkDoc" href="https://youtu.be/IKRB-GAK84c" target="_blank">▶
+                                ASSISTIR</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Essa parte fica as informações sobre o trabalho/documentário. Porque escolhemos o tema, etc -->
+        <section id="informativo">
+            <h1 id="titInfo">Conteúdo Informativo</h1>
+            <div class="cardInfo">
+                <p class="textoInfo">
+                    Antigamente, os computadores eram enormes e ocupavam muito espaço. Com o avanço da tecnologia, eles
+                    ficaram menores, mais rápidos e modernos, chegando aos computadores e notebooks que usamos hoje.
+                </p>
+                <p class="textoInfo">
+                    Hoje, os computadores são muito importantes para estudar, trabalhar, pesquisar e se comunicar. Eles
+                    facilitam várias tarefas do dia a dia e continuam evoluindo com novas tecnologias, como a
+                    inteligência artificial.
+                </p>
+                <p class="textoInfo">
+                    Os computadores continuam evoluindo e se tornando cada vez mais avançados. Com o desenvolvimento de
+                    novas tecnologias, como a IA, eles poderão realizar tarefas ainda mais complexas e transformar a
+                    maneira como vivemos, estudamos e trabalhamos.
+                </p>
+            </div>
+        </section>
+
+        <!--aqui ficam as imagens e resumo da linha do tempo do computador-->
+        <section id="cronologia">
+            <h2 id="titCard">Cartão de Resumo/Linha do Tempo</h2>
+            <div id="carrosselContainer" class="carrosselContainer">
+                <button id="btn-voltar-cronologia" class="btn-voltar">❮</button>
+                <div class="carrosselSlides" id="carrosselSlides">
+                    <div class="card-foto">
+                        <img src="images/Image.jpg">
+                        <div class=" legenda-sobreposta">2700 a.C. — Ábaco
+                            Um dos primeiros instrumentos de cálculo. Utilizava contas que eram movimentadas para
+                            representar números e realizar operações matemáticas.
+                        </div>
+                    </div>
+                    <div class="card-foto">
+                        <img src="images/Image(1).jpg">
+                        <div class=" legenda-sobreposta">1642 — Pascalina
+                            Calculadora mecânica que realizava operações de adição e subtração por meio de engrenagens.
+                        </div>
+                    </div>
+                    <div class="card-foto">
+                        <img src="images/Image(2).jpg">
+                        <div class=" legenda-sobreposta">1837 — Máquina Analítica
+                            Projeto de uma máquina programável que previa operações de cálculo e armazenamento de dados.
+                            É considerada um importante precursor dos computadores.
+                        </div>
+                    </div>
+                    <div class="card-foto">
+                        <img src="images/Image(3).jpg">
+                        <div class=" legenda-sobreposta">1843 — Ada Lovelace
+                            Publicou um algoritmo destinado à Máquina Analítica, sendo reconhecida como pioneira da
+                            programação de computadores.
+                        </div>
+                    </div>
+                    <div class="card-foto">
+                        <img src="images/Image(4).jpg">
+                        <div class=" legenda-sobreposta">1946 — ENIAC
+                            Um dos primeiros computadores eletrônicos de uso geral. Ocupava uma sala inteira e utilizava
+                            milhares de válvulas eletrônicas. </div>
+                    </div>
+                    <div class="card-foto">
+                        <img src="images/Image(5).jpg">
+                        <div class=" legenda-sobreposta">1947 — Transistor
+                            O desenvolvimento do transistor possibilitou computadores menores, mais eficientes e que
+                            consumiam menos energia do que os que utilizavam válvulas.
+                        </div>
+                    </div>
+                    <div class="card-foto">
+                        <img src="images/Image(6).jpg">
+                        <div class=" legenda-sobreposta">1958 — Circuito integrado
+                            A integração de componentes eletrônicos em um mesmo dispositivo ajudou a reduzir o tamanho
+                            dos equipamentos e ampliar sua capacidade.
+                        </div>
+                    </div>
+                    <div class="card-foto">
+                        <img src="images/Image(7).jpg">
+                        <div class=" legenda-sobreposta">1971 — Microprocessador
+                            O Intel 4004 reuniu as funções de processamento central em um único chip, contribuindo para
+                            o desenvolvimento de computadores menores.
+                        </div>
+                    </div>
+                    <div class="card-foto">
+                        <img src="images/Image(8).jpg">
+                        <div class=" legenda-sobreposta">Década de 1970 — Computadores pessoais
+                            Equipamentos como o Apple II ajudaram a levar os computadores para residências, escolas e
+                            pequenos negócios.
+                        </div>
+                    </div>
+                    <div class="card-foto">
+                        <img src="images/Image(9).jpg">
+                        <div class=" legenda-sobreposta">1981 — IBM PC
+                            O lançamento do IBM PC fortaleceu o mercado de computadores pessoais e ajudou a consolidar
+                            esse tipo de equipamento nas empresas e nos lares.
+                        </div>
+                    </div>
+                    <div class="card-foto">
+                        <img src="images/Image(10).jpg">
+                        <div class=" legenda-sobreposta">Anos 2000 — Notebooks e mobilidade
+                            Os notebooks se tornaram mais comuns, permitindo trabalhar, estudar e acessar informações
+                            fora de casa ou do escritório.
+                        </div>
+                    </div>
+                    <div class="card-foto">
+                        <img src="images/Image(11).jpg">
+                        <div class=" legenda-sobreposta">2007 — Expansão dos smartphones
+                            O lançamento do iPhone ajudou a popularizar uma nova forma de interação com dispositivos
+                            móveis, combinando comunicação, internet e aplicativos.
+                        </div>
+                    </div>
+                    <div class="card-foto">
+                        <img src="images/Image(12).jpg">
+                        <div class=" legenda-sobreposta">Década de 2010 — Inteligência artificial
+                            Avanços em aprendizado de máquina, grandes volumes de dados e computação em nuvem ampliaram
+                            as aplicações da inteligência artificial.
+                        </div>
+                    </div>
+                    <div class="card-foto">
+                        <img src="images/Image(13).jpg">
+                        <div class=" legenda-sobreposta">Anos 2000 — Notebooks e mobilidade
+                            Os notebooks se tornaram mais comuns, permitindo trabalhar, estudar e acessar informações
+                            fora de casa ou do escritório.
+                        </div>
+                    </div>
+
+                    <div class="card-foto">
+                        <img src="images/Image(14).jpg">
+                        <div class=" legenda-sobreposta">2020–2026 — IA generativa e novas tecnologias
+                            Ferramentas capazes de gerar textos, imagens, sons e códigos se popularizaram. Também
+                            avançam as pesquisas em computação quântica, robótica e sistemas inteligentes.
+                        </div>
+                    </div>
+            </div>
+
+            <button id="btn-avancar-cronologia" class="btn-avancar">❯</button>
+            </div>
+        </section>
+
+        <!--área com links de outros sites com mais conteúdos para quem quiser mais-->
+        <section id="card">
+            <h3 id="titMais">Quer aprender mais?</h3>
+            <p id="textoMais">Confira abaixo a seleção de sites informativos que reunimos para você:</p>
+            <div class="listas">
+                <ul>
+                    <li><a href="https://www.todamateria.com.br/historia-e-evolucao-dos-computadores/"
+                            target="_blank">1. História e Evolução dos Computadores</a></li>
+                    <li><a href="https://brasilescola.uol.com.br/informatica/evolucao-dos-computadores.htm"
+                            target="_blank">2. Evolução do computador: criação, linha do tempo</a></li>
+                    <li><a href="https://mundoeducacao.uol.com.br/informatica/evolucao-dos-computadores.htm"
+                            target="_blank">3. Evolução do computador: criação e história </a></li>
+                    <li><a href="https://www.youtube.com/watch?v=mFdUqqwzbVs&t=400s" target="_blank">4. Vídeo: A
+                            Evolução dos Computadores</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=1pxPaN3ATps" target="_blank">5. Vídeo: Conheça a
+                            história do computador</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=hXVZIfGMc2I" target="_blank">6. Vídeo: Visita ao Museu
+                            do Computador</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+        <!--rodapé com nosso logo + icones tipo instagram, facebook, tiktok etc-->
+        <footer id="footer">
+            <h2 id="titFooter">enIAc</h2>
+            <p id="textoFooter"> Desenvolvido por Geovanna, Isadora, Júlia e Mikaela, ©2026</p>
+            <div class="icons">
+                <button>
+                    <img src=" https://images.icon-icons.com/729/PNG/96/whatsapp_icon-icons.com_62756.png"
+                        alt="whatsapp">
+                </button>
+                <button>
+                    <img src=" https://images.icon-icons.com/836/PNG/96/Instagram_icon-icons.com_66804.png"
+                        alt="instagram">
+                </button>
+                <button>
+                    <img src=" https://images.icon-icons.com/2429/PNG/96/facebook_logo_icon_147291.png" alt="facebook">
+                </button>
+                <button>
+                    <img src=" https://images.icon-icons.com/4393/PNG/96/269130_x-logo-icon.png" alt="x">
+                </button>
+                <button>
+                    <img src=" https://images.icon-icons.com/805/PNG/96/linkedin_icon-icons.com_65929.png"
+                        alt="linkedin">
+                </button>
+            </div>
+        </footer>
+
+        <script src="js/script.js"></script>
+</body>
+
+</html>

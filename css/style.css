@@ -1,0 +1,754 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: monospace;
+    background-color: #f8f5fa;
+    color: #302638;
+}
+
+/*header*/
+#menu {
+    background-color: #e8dcef;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    padding: 30px;
+}
+
+.nav {
+    width: 95%;
+    display: flex;
+    gap: 20px;
+}
+
+.nav h1 {
+    font-size: 40px;
+    margin: auto;
+    text-align: center;
+    color: #5b2875;
+}
+
+#menu2 {
+    display: none;
+}
+
+#menu2.ativo {
+    display: flex;
+}
+
+#menu img {
+    width: 40px;
+}
+
+#menu button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+#menu button:hover {
+    background-color: #5b2875;
+    transition: 0.3s ease;
+}
+
+.menuOculto {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+    background: linear-gradient(to bottom, #e8dcef, #5b2875);
+    padding: 40px 20px;
+    width: 100%;
+}
+
+.card-equipe {
+    width: 20%;  
+    transition: transform 0.2s ease;
+}
+
+.card-equipe:hover {
+    transform: scale(1.05);
+}
+
+.card-equipe p {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.card-img h2 {
+    max-width: 150px;
+    color: #ffffff;
+}
+
+.card-equipe img {
+    width: 100px;
+}
+
+.card-img {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+/*primeira área (história do computador + galeria de imagens)*/
+.inicio h1 {
+    text-align: center;
+    color: #5b2875;
+    margin: 20px 0;
+}
+
+/*galeria 1*/
+.galeria-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #eee8f2;
+}
+
+.galeria-container .btn-voltar {
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    background-color: #d5c5df;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    color: white;
+}
+
+.galeria-container .btn-avancar {
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    background-color: #d5c5df;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    color: white;
+}
+
+/* Container que esconde a barra de rolagem e permite rolar suavemente */
+.galeria {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    scrollbar-width: none;
+    /* Esconde no Firefox */
+}
+
+.galeria::-webkit-scrollbar {
+    display: none;
+    /* Esconde no Chrome/Safari */
+}
+
+.galeria img {
+    max-width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: 3px solid #d5c5df;
+    flex-shrink: 0;
+}
+
+
+/*cor da seta da primeira galeria (passar pra direita-esquerda)*/
+.galeria-container:hover .btn-voltar,
+.galeria-container:hover .btn-avancar {
+    background-color: #f0e5f5;
+}
+
+/*área do documentário*/
+.documentario {
+    /*qual o tamanho da área do documentário, largura etc*/
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.bannerBlur {
+    /*imagem de fundo*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/documentario.jpg');
+    /* alterar para a imagem da capa do documentário*/
+    background-size: cover;
+    background-position: center right;
+    filter: blur(4px);
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+.bannerSombra {
+    /*gradiente (sombra)*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(48, 38, 56, 0.95) 0%, rgba(48, 38, 56, 0.65) 60%, transparent 100%);
+    z-index: 2;
+}
+
+.bannerContainer {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+}
+
+.bannerContent {
+    max-width: 600px;
+}
+
+/* Título do documentário */
+#titDoc {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #8e35ae;
+}
+
+/* Data e Nomes */
+.docMeta {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #f0eaf5;
+    margin-bottom: 15px;
+}
+
+/* Descrição */
+#descDoc {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #eee8f2;
+    margin-bottom: 15px;
+}
+
+#descDoc p{
+    margin-bottom: 8px;
+}
+
+.btnMais {
+    text-decoration: none;
+    color: #e4c8ff;
+    padding: 3px 5px;
+}
+/* Esconde o conteúdo por padrão */
+.oculto {
+    display: none;
+}
+
+/* Quando a classe 'ativo' for adicionada via JS, o conteúdo aparece */
+.oculto.ativo {
+    display: block;
+}
+
+
+/* Faixa etária e avisos */
+.docTags {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #eee8f2;
+    margin-bottom: 20px;
+}
+
+.idade {
+    background-color: #4f8060;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 3px 6px;
+    border-radius: 3px;
+}
+
+/* Botões */
+.docAcoes {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btnPlay {
+    background-color: #7950a1;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.btnPlay:hover {
+    transition: 0.2s ease;
+    background-color: #493451;
+
+}
+
+.btnPlay a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#informativo {
+    background-color: #eee0f5;
+    text-align: center;
+    padding: 15px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(60, 30, 70, 0.10);
+}
+
+#informativo h1 {
+    color: #5b2875;
+    padding: 5px;
+}
+
+.cardInfo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    text-align: left;
+}
+
+#informativo p {
+    background-color: #ffffff;
+    color: #493451;
+    padding: 20px;
+    border-radius: 15px;
+    flex: 1 1 280px;
+    max-width: 350px;
+    margin: 0;
+    font-size: 17px;
+    box-shadow: 0 4px 12px rgba(60, 30, 70, 0.10);
+}
+
+#informativo p:hover {
+    transform: scale(1.06);
+    transition: 0.3s;
+}
+
+#cronologia h2 {
+    text-align: center;
+    color: #5b2875;
+    margin: 20px 0;
+}
+
+.carrosselContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #eee8f2;
+}
+
+.carrosselSlides {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 15px;
+    padding: 20px;
+    width: 100%;
+    scrollbar-width: none;
+}
+
+.carrosselSlides::-webkit-scrollbar {
+    display: none;
+}
+
+.carrosselSlides img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border: 3px solid #d5c5df;
+    flex-shrink: 0;
+}
+
+/* --- ESTILO DOS BOTÕES DA CRONOLOGIA --- */
+#btn-voltar-cronologia,
+#btn-avancar-cronologia {
+    position: absolute;
+    background-color: rgba(91, 40, 117, 0.65);
+    color: #ffffff;
+    border: none;
+    font-size: 1.5rem;
+    padding: 15px 10px;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s ease;
+}
+
+#btn-voltar-cronologia {
+    left: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+#btn-avancar-cronologia {
+    right: 0;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+#btn-voltar-cronologia:hover,
+#btn-avancar-cronologia:hover {
+    background-color: rgba(91, 40, 117, 0.90);
+}
+
+/*legenda da segunda galeria*/
+/* O contêiner que segura a imagem e a legenda */
+.card-foto {
+    position: relative;
+    min-width: 280px;
+    /* Largura fixa para os cards não espremerem */
+    height: 350px;
+    /* Altura fixa para todos ficarem iguais */
+    overflow: hidden;
+    border-radius: 15px;
+    flex-shrink: 0;
+    /* Impede que o flexbox diminua os cards */
+    cursor: pointer;
+}
+
+/* Estilo padrão da imagem */
+.card-foto img {
+    width: 400px;
+    height: 100%;
+    object-fit: cover;
+    /* Mantém a proporção sem distorcer */
+    display: block;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Estilo padrão da legenda (invisível e escondida embaixo/fora) */
+.legenda-sobreposta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: rgba(35, 23, 42, 0.88);
+    /* Fundo escuro semi-transparente */
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+/* --- EFEITO AO PASSAR O MOUSE (HOVER) --- */
+
+/* 1. Dá o zoom na imagem */
+.card-foto:hover img {
+    transform: scale(1.1);
+    /* Aumenta a imagem em 10% */
+    filter: brightness(0.7);
+    /* Dá uma leve escurecida na foto */
+}
+
+/* 2. Mostra a legenda sobreposta */
+.card-foto:hover .legenda-sobreposta {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* card: "Quer aprender mais?" */
+#card {
+    background-color: #ffffff;
+    color: #302638;
+    width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #d5c5df;
+    box-shadow: 0 4px 12px rgba(60, 30, 70, 0.10);
+}
+
+.listas {
+    margin-top: 5px;
+    display: flex;
+    gap: 200px;
+    text-align: justify;
+
+}
+
+.listas ul {
+    list-style: none;
+
+}
+
+.listas ul li {
+    color: #302638;
+}
+
+.listas ul li a {
+    text-decoration: none;
+    color: #5b2875;
+    cursor: pointer;
+}
+.listas ul li a:hover {
+    transition: 0.2s ease;
+    background-color: #e0b8f5;
+    padding: 2px 4px;
+    border-radius: 10px;
+}
+
+/* footer */
+footer {
+    background-color: #e8dcef;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 40px 20px;
+    margin-top: 40px;
+    border-top: 2px solid #d5c5df;
+}
+
+footer h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #5b2875;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #66596d;
+}
+
+.icons button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.2 ease;
+}
+
+.icons button:hover {
+    transition: 0.3s;
+    transform: scale(1.5);
+}
+
+.icons {
+    display: flex;
+    gap: 18px;
+    margin: 10px 0 0 0;
+}
+
+.icons img {
+    width: 28px;
+    height: 28px;
+}
+
+/* =========================================
+   MODO ESCURO
+   Ativado quando o body recebe .tema-escuro
+========================================= */
+
+body.tema-escuro {
+    color-scheme: dark;
+    background-color: #211a27;
+    color: #f0e8f5;
+}
+
+/* HEADER */
+body.tema-escuro #menu {
+    background-color: #302438;
+}
+
+body.tema-escuro .nav h1 {
+    color: #e0b8f5;
+}
+
+body.tema-escuro #menu button:hover {
+    background-color: #68427e;
+}
+
+body.tema-escuro .menuOculto {
+    background: linear-gradient(to bottom,
+            #302438,
+            #18121d);
+}
+
+body.tema-escuro .card-equipe p {
+    color: #f0e8f5;
+}
+
+body.tema-escuro .card-img h2 {
+    color: #e0b8f5;
+}
+
+/* PRIMEIRA ÁREA */
+body.tema-escuro .inicio h1 {
+    color: #e0b8f5;
+}
+
+/* PRIMEIRA GALERIA */
+body.tema-escuro .galeria-container {
+    background-color: #18121d;
+}
+
+body.tema-escuro .galeria img {
+    border-color: #68427e;
+}
+
+body.tema-escuro .btn-voltar,
+body.tema-escuro .btn-avancar {
+    color: white;
+    background-color: #5b2875;
+}
+
+body.tema-escuro .galeria-container:hover .btn-voltar,
+body.tema-escuro .galeria-container:hover .btn-avancar {
+    background-color: rgba(142, 80, 170, 0.45);
+}
+
+/* DOCUMENTÁRIO */
+body.tema-escuro .bannerSombra {
+    background: linear-gradient(180deg,
+            rgba(24, 18, 29, 0.96) 0%,
+            rgba(24, 18, 29, 0.75) 60%,
+            transparent 100%);
+}
+
+body.tema-escuro #titDoc {
+    color: #dca5f5;
+}
+
+body.tema-escuro .docMeta {
+    color: #e8dcef;
+}
+
+body.tema-escuro #descDoc {
+    color: #d8cddd;
+}
+
+body.tema-escuro .btnMais {
+    color: #e0b8f5;
+}
+
+body.tema-escuro .docTags {
+    color: #d8cddd;
+}
+
+body.tema-escuro .idade {
+    background-color: #3d7652;
+    color: #ffffff;
+}
+
+body.tema-escuro .btnPlay {
+    background-color: #7950a1;
+    color: #ffffff;
+}
+
+body.tema-escuro .btnPlay:hover {
+    background-color: #68427e;
+    color: #ffffff;
+}
+
+body.tema-escuro .btnPlay a {
+    color: #ffffff;
+}
+
+/* INFORMATIVO */
+body.tema-escuro #informativo {
+    background-color: #302438;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+body.tema-escuro #informativo h1 {
+    color: #e0b8f5;
+}
+
+body.tema-escuro #informativo p {
+    background-color: #3a2c43;
+    color: #f0e8f5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+}
+
+/* CRONOLOGIA */
+body.tema-escuro #cronologia h2 {
+    color: #e0b8f5;
+}
+
+/* SEGUNDA GALERIA */
+body.tema-escuro .carrosselContainer {
+    background-color: #18121d;
+}
+
+body.tema-escuro .carrosselSlides img {
+    border-color: #68427e;
+}
+
+body.tema-escuro .carrosselContainer .btn-voltar,
+body.tema-escuro .carrosselContainer .btn-avancar {
+    background-color: rgba(48, 36, 56, 0.85);
+    color: #ffffff;
+}
+
+body.tema-escuro .carrosselContainer .btn-voltar:hover,
+body.tema-escuro .carrosselContainer .btn-avancar:hover {
+    background-color: rgba(104, 66, 126, 0.95);
+}
+
+/* LEGENDAS DAS IMAGENS */
+body.tema-escuro .legenda-sobreposta {
+    background: rgba(24, 18, 29, 0.92);
+    color: #f0e8f5;
+}
+
+/* CARD "QUER APRENDER MAIS?" */
+body.tema-escuro #card {
+    background-color: #302438;
+    color: #f0e8f5;
+    border-color: #68427e;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+body.tema-escuro .listas ul li a{
+    color: white;
+}
+
+body.tema-escuro .listas ul li a:hover {
+    background-color: #5b2875;
+    color: #ffffff;
+}
+
+/* FOOTER */
+body.tema-escuro footer {
+    background-color: #302438;
+    border-top-color: #68427e;
+}
+
+body.tema-escuro footer h2 {
+    color: #e0b8f5;
+}
+
+body.tema-escuro footer p {
+    color: #d8cddd;
+}
